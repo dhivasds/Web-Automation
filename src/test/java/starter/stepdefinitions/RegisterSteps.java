@@ -55,10 +55,14 @@ public class RegisterSteps {
 
     @Then("I redirect to {string}")
     public void iRedirectTo(String page) {
-//        if (page.equals("Login")){
-//            loginPage.titleAppers();
-//            loginPage.titleTextEqual();
-//        }
+        if (page.equals("Login")){
+            loginPage.titleAppers();
+            loginPage.titleTextEqual();
+        }else {
+            // GET SELECTOR BUAT BUTTON ERROR ALERT
+            registerPage.errorMessageAppears();
+            registerPage.errorFieldAlert();
+        }
 
     }
 

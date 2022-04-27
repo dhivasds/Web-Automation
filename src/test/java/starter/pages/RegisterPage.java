@@ -16,19 +16,28 @@ public class RegisterPage extends PageObject {
     }
 
     private By nameField(){
-        return By.xpath("//*[@id='input-115']");
+        return By.xpath("/html/body/div/div/main/div/div/div/div[2]/form/div[1]/div/div[1]/div/input");
     }
 
     private By emailField(){
-        return By.xpath("//*[@id='input-21']");
+        return By.xpath("/html/body/div/div/main/div/div/div/div[2]/form/div[2]/div/div[1]/div/input");
     }
 
     private By passwordField(){
-        return By.xpath("//*[@class = 'v-label theme--light' and text() = 'Password']");
+        return By.xpath("/html/body/div/div/main/div/div/div/div[2]/form/div[3]/div/div[1]/div/input");
     }
 
     private By registerButton(){
         return By.cssSelector("button[class='v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary'] span[class='v-btn__content']");
+    }
+
+//    Selector Get Alert in Register
+    private By errorMessage() {
+        return By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div[2]/div[1]/div");
+    }
+
+    private By alertField() {
+        return By.className("v-alert__icon");
     }
 
     @Step
@@ -62,4 +71,17 @@ public class RegisterPage extends PageObject {
     public void clickButtonRegister(){
         $(registerButton()).click();
     }
+
+
+    //  Alert in Register Page
+    @Step
+    public boolean errorMessageAppears(){
+        return $(errorMessage()).isDisplayed();
+    }
+
+    @Step
+    public boolean errorFieldAlert(){
+        return $(alertField()).isSelected();
+    }
 }
+

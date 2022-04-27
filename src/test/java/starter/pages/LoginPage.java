@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends PageObject {
     // Get Login Title for equals
-    private By cardLoginTitle() {return By.xpath("//div[@class='v-card__title']");}
+    private By cardLoginTitle() {return By.xpath("//div[text() = 'Login']");}
 
     @Step
     public boolean titleAppers(){

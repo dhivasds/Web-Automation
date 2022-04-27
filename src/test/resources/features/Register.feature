@@ -16,7 +16,9 @@
       Then I redirect to "<page>"
       Examples:
         | nama| email| password | page |
-        | pisang132sas   | pisang132sas     | pisang132sas        | LoginPage |
+        | user1   | user@gmail.com | user1 | Register|
+        | user   |                |                   | Register|
+
 
 
 
