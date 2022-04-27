@@ -16,15 +16,15 @@ public class RegisterPage extends PageObject {
     }
 
     private By nameField(){
-        return By.xpath("/html/body/div/div/main/div/div/div/div[2]/form/div[1]/div/div[1]/div/input");
+        return By.xpath("//*[label[text() = 'Nama Lengkap']]/input");
     }
 
     private By emailField(){
-        return By.xpath("/html/body/div/div/main/div/div/div/div[2]/form/div[2]/div/div[1]/div/input");
+        return By.xpath("//*[label[text() = 'Email']]/input");
     }
 
     private By passwordField(){
-        return By.xpath("/html/body/div/div/main/div/div/div/div[2]/form/div[3]/div/div[1]/div/input");
+        return By.xpath("//*[label[text() = 'Password']]/input");
     }
 
     private By registerButton(){
@@ -33,7 +33,8 @@ public class RegisterPage extends PageObject {
 
 //    Selector Get Alert in Register
     private By errorMessage() {
-        return By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div[2]/div[1]/div");
+        return By.xpath("//*[@class='v-alert__wrapper']");
+//        return By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div[2]/div[1]/div");
     }
 
     private By alertField() {
