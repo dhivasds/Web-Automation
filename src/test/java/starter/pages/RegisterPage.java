@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 public class RegisterPage extends PageObject {
 // GET SELECTOR
-    private By buttonLogin(){
+    private By buttonSignin(){
         return By.xpath("//i[@class='v-icon notranslate fas fa-sign-in theme--dark']");
     }
 
@@ -47,8 +47,8 @@ public class RegisterPage extends PageObject {
     }
 
     @Step
-    public void clickLoginButton(){
-        $(buttonLogin()).click();
+    public void clickLoginSignin(){
+        $(buttonSignin()).click();
     }
 
     @Step

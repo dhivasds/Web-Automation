@@ -22,9 +22,9 @@ public class RegisterSteps {
         registerPage.openUrl("https://qa.alta.id/");
     }
 
-    @When("I click button login")
-    public void iClickButtonLogin() {
-        registerPage.clickLoginButton();
+    @When("I click button signin")
+    public void iClickButtonSignin() {
+        registerPage.clickLoginSignin();
     }
 
     @And("I click text register")
