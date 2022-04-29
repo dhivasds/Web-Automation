@@ -55,14 +55,11 @@ public class LoginPage extends PageObject {
     public boolean iconProfileEquals(){ return $(iconProfile()).equals(iconProfileAppers());}
 //    -----------------------------------
 
+//    ------ ALERT FIELD LOGIN EQUALS --------
     @Step
-    public boolean errorMessageAppears(){
-        return $(errorMessage()).isDisplayed();
-    }
+    public boolean errorMessageAppears(){ return $(errorMessage()).isDisplayed();}
 
     @Step
-    public boolean errorMessageEquals(String text){
-        return $(errorMessage()).getText().equals(text);
-    }
+    public boolean errorMessageEquals(String text){ return $(errorMessage()).getText().equals(text);}
 
 }

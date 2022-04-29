@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 
+import Utils.General;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,6 +14,9 @@ public class RegisterSteps {
 
     @Steps
     RegisterPage registerPage;
+
+    @Steps
+    General general;
 
     @Steps
     LoginPage loginPage;
@@ -39,7 +43,11 @@ public class RegisterSteps {
 
     @And("I input {string} email")
     public void iInputEmail(String email) {
-        registerPage.inputEmail(email);
+        if (email.equals("randomEmail")){
+            registerPage.inputEmail(general.randomEmail(email));
+        }else {
+            registerPage.inputEmail((email));
+        }
     }
 
     @And("I input {string} password")
