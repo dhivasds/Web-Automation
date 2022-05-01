@@ -57,8 +57,8 @@ public class RegisterPage extends PageObject {
     }
 
     @Step
-    public void inputNama(String nama){
-        $(nameField()).type(nama);
+    public void inputName(String name){
+        $(nameField()).type(name);
     }
 
     @Step

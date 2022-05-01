@@ -13,13 +13,6 @@ public class LoginPage extends PageObject {
     // Get Login Title for equals
     private By cardLoginTitle() {return By.xpath("//div[text() = 'Login']");}
 
-    // Get Equals "select category" for equals in login steps
-
-//    ---- EQUALS SELECT Category -----
-    private By fieldCategory(){ return By.xpath("//div[@class='v-select__slot']");}
-    private By categorySelected(){ return By.xpath("//label[text()='Select category ...']");}
-//    -----------------
-
 //    ---EQUALS ICON PROFILE----
     private By iconProfile(){ return By.xpath("//*[@class='v-icon notranslate fas fa-user theme--dark']");}
 //    -------
@@ -39,13 +32,6 @@ public class LoginPage extends PageObject {
     @Step
     public void clickButtonLogin(){ $(loginButton()).click();}
 
-// Product List Page
-//    ------ CATEGORY SELECTED EQUALS ----------
-//    @Step
-//    public boolean categorySelectedAppers(){ return $(categorySelected()).isDisplayed();}
-//    @Step
-//    public boolean categorySelectedEquals(){ return $(categorySelected()).getText().equals("Select category ...");}
-//    ----------------------------------
 
 //    ----- ICON PROFILE EQUALS -----------
     @Step

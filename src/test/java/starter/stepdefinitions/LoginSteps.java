@@ -23,12 +23,16 @@ public class LoginSteps {
         }else if (result.equals("password is required")){
             loginPage.errorMessageAppears();
             loginPage.errorMessageEquals(result);
+        }else if(result.equals("email or password is invalid")) {
+            loginPage.errorMessageAppears();
+            loginPage.errorMessageEquals(result);
+        }else if(result.equals("record not found")) {
+            loginPage.errorMessageAppears();
+            loginPage.errorMessageEquals(result);
         }else{
-            loginPage.iconProfileAppers();
-            loginPage.iconProfileEquals();
-
-            //        loginPage.categorySelectedAppers();
-            //        loginPage.categorySelectedEquals();
+                loginPage.iconProfileAppers();
+                loginPage.iconProfileEquals();
+            }
         }
     }
-}
+

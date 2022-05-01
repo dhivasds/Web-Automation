@@ -1,6 +1,7 @@
 package starter.stepdefinitions;
 
 import Utils.General;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import starter.pages.LoginPage;
 import starter.pages.RegisterPage;
+
 
 
 public class RegisterSteps {
@@ -36,9 +38,13 @@ public class RegisterSteps {
         registerPage.clickTextRegister();
     }
 
-    @And("I Input {string} nama")
-    public void iInputNama(String nama) {
-        registerPage.inputNama(nama);
+    @And("I Input {string} name")
+    public void iInputName(String name) {
+        if (name.equals("randomName")){
+            registerPage.inputName(general.randomName(name));
+        }else{
+            registerPage.inputName(name);
+        }
     }
 
     @And("I input {string} email")

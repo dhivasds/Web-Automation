@@ -13,9 +13,12 @@
 #    Then I get the "<result>"
 #    Examples:
 #      | email| password | result |
-#      | randEmail | a | |
-##      | a |   |password is required|
-##      |  | a |email is required|
+#      |a     |a         |        |
+#      |a     |          |password is required|
+#      |      | a         |email is required   |
+#      | a    | wrongPassword       |email or password is invalid |
+#      |randomEmail| wrongPassword  |record not found             |
 #
 #
-##  Karna email menggunakan random, bisa dikosongkan
+#
+##  Karna email menggunakan random, bisa dikosongkan karna jika di isi akan otomatis menggunakan faker
