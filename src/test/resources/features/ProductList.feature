@@ -15,12 +15,14 @@
 #  And I click category "kesehatan"
 #  Then I get "Products is empty!"
 #
-##  Belom sesuai milih categorynya
-##  Scenario: As a user i want to select category product and found product
-##    Given I am on the homepage page
-##    When I click dropdown select category
-##    And I click category "Covid-19"
-##    Then I get "Product"
+#Scenario: As a user I want to click close category in a category
+#    Given I am on the homepage page
+#    When I click dropdown select category
+#    And I click category "kesehatan"
+#    And I click button close
+#    Then I redirect to product list
+#
+#
 #
 #
 #

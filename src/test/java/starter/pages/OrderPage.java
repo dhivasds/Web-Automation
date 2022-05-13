@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 public class OrderPage extends PageObject {
 //    ======= SELECTOR =======
-    private By buttonCart(){ return By.xpath("(//button[@type='button'])[1]");}
+    private By buttonCart(){ return By.xpath("//*[@class='v-icon notranslate fas fa-shopping-cart theme--dark']");}
     private By textTotal() { return By.xpath("//div[contains(text(),'Total Bayar')]");}
     private By iconPlus(){ return By.xpath("//main[@class='v-main']//button[2]");}
     private By iconMin(){ return By.xpath("(//button[@type='button'])[3]");}

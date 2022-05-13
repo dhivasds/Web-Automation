@@ -16,8 +16,10 @@
 #      Then I redirect to "<page>"
 #      Examples:
 #        | nama| email| password | page |
-##        |    | user11@gmail.com | user11 | Login|
-##        | user11   |            |   | Register|
-#        | randomName | randomEmail|   |        |
+#        | dhivas1   | dhivas1@gmail.com     | dhivas1 | Login   |
+#        | dhivas1   | dhivas1@gmail.com     | dhivas1 | Register|
+#        |           | dhivas1@gmail.com     | dhivas  | Register|
+#        | randomName|                       | dhivas1 | Register|
+#        | randomName| randomEmail           |         | Register|
 #
 ##      Redirect to Login must be fix, not equals -29 April

@@ -13,11 +13,11 @@
 #    Then I get the "<result>"
 #    Examples:
 #      | email| password | result |
-#      |a     |a         |        |
-#      |a     |          |password is required|
-#      |      | a         |email is required   |
-#      | a    | wrongPassword       |email or password is invalid |
-#      |randomEmail| wrongPassword  |record not found             |
+#      |dhivas1@gmail.com | dhivas1       |                             |
+#      |dhivas1@gmail.com |               |password is required         |
+#      |                  | dhivas1       |email is required            |
+#      |dhivas1@gmail.com | wrongPassword |email or password is invalid |
+#      |randomEmail       | wrongPassword |record not found             |
 #
 #
 #

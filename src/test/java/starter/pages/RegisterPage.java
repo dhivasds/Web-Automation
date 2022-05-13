@@ -10,23 +10,18 @@ public class RegisterPage extends PageObject {
     private By buttonSignin(){
         return By.xpath("//i[@class='v-icon notranslate fas fa-sign-in theme--dark']");
     }
-
     private By textRegister(){
         return By.xpath("//*[@href=\"/auth/register\"]");
     }
-
     private By nameField(){
         return By.xpath("//*[label[text() = 'Nama Lengkap']]/input");
     }
-
     private By emailField(){
         return By.xpath("//*[label[text() = 'Email']]/input");
     }
-
     private By passwordField(){
         return By.xpath("//*[label[text() = 'Password']]/input");
     }
-
     private By registerButton(){
         return By.cssSelector("button[class='v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary'] span[class='v-btn__content']");
     }
@@ -74,7 +69,7 @@ public class RegisterPage extends PageObject {
     }
 
 
-    //  Alert in Register Page
+    //  Equals Alert in Register Page
     @Step
     public boolean errorMessageAppears(){
         return $(errorMessage()).isDisplayed();

@@ -48,4 +48,14 @@ public class ProductListSteps {
     }
 
 
+    @And("I click button close")
+    public void iClickButtonClose() {
+        productListPage.clickButtonClose();
+    }
+
+    @Then("I redirect to product list")
+    public void iRedirectProductList() {
+        productListPage.buttonBeliAppers();
+        productListPage.buttonBeliEquals();
+    }
 }
