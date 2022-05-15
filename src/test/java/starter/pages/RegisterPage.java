@@ -26,15 +26,13 @@ public class RegisterPage extends PageObject {
         return By.cssSelector("button[class='v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary'] span[class='v-btn__content']");
     }
 
-//    Selector Get Alert in Register
-    private By errorMessage() {
-        return By.xpath("//*[@class='v-alert__wrapper']");
-//        return By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div[2]/div[1]/div");
-    }
 
-    private By alertField() {
-        return By.className("v-alert__icon");
-    }
+//   Selector Alert in Register
+    private By duplicateEmail() { return By.xpath("//div[text()=' ERROR: duplicate key value violates unique constraint \"users_email_key\" (SQLSTATE 23505) ']");}
+    private By nullFullname() { return By.xpath("//div[text()=' fullname is required ']");}
+    private By nullEmail(){ return By.xpath("//div[text()=' email is required ']");}
+    private By nullPassword() { return By.xpath("//div[text()=' password is required ']");}
+
 
     @Step
     public static OpenUrl url(String targetUrl){
@@ -52,13 +50,10 @@ public class RegisterPage extends PageObject {
     }
 
     @Step
-    public void inputName(String name){
-        $(nameField()).type(name);
-    }
+    public void inputName(String name){$(nameField()).type(name);}
 
     @Step
-    public void inputEmail(String email){ $(emailField()).type(email);
-    }
+    public void inputEmail(String email){ $(emailField()).type(email);}
 
     @Step
     public void inputPassword(String password){ $(passwordField()).type(password); }
@@ -71,13 +66,23 @@ public class RegisterPage extends PageObject {
 
     //  Equals Alert in Register Page
     @Step
-    public boolean errorMessageAppears(){
-        return $(errorMessage()).isDisplayed();
-    }
+    public boolean errorDuplicateEmailAppers() { return $(duplicateEmail()).isDisplayed();}
+    @Step
+    public boolean errorDuplicateEmailEquals() { return $(duplicateEmail()).equals("ERROR: duplicate key value violates unique constraint \"users_email_key\" (SQLSTATE 23505)");}
 
     @Step
-    public boolean errorFieldAlert(){
-        return $(alertField()).isSelected();
-    }
+    public boolean errorNullFullnameAppers(){ return $(nullFullname()).isDisplayed();}
+    @Step
+    public boolean errorNullFullnameEquals(){ return $(nullFullname()).equals("fullname is required");}
+
+    @Step
+    public boolean errorNullEmailAppers(){ return $(nullEmail()).isDisplayed();}
+    @Step
+    public boolean errorNullEmailEquals(){ return $(nullEmail()).equals("email is required");}
+
+    @Step
+    public boolean errorNullPasswordAppers(){ return $(nullPassword()).isDisplayed();}
+    @Step
+    public boolean errorNullPasswordEquals(){ return $(nullPassword()).equals("password is required");}
 }
 

@@ -1,25 +1,29 @@
-#
-#@Register
-#    Feature: Register
-#    As a user
-#    I want to register
-#    So that I can create account in AltaShop
-#
-#    Scenario Outline: Register Scenario
-#      Given I am on the homepage page
-#      When I click button signin
-#      And I click text register
-#      And I Input "<nama>" name
-#      And I input "<email>" email
-#      And I input "<password>" password
-#      And I click register button
-#      Then I redirect to "<page>"
-#      Examples:
-#        | nama| email| password | page |
-#        | dhivas1   | dhivas1@gmail.com     | dhivas1 | Login   |
-#        | dhivas1   | dhivas1@gmail.com     | dhivas1 | Register|
-#        |           | dhivas1@gmail.com     | dhivas  | Register|
-#        | randomName|                       | dhivas1 | Register|
-#        | randomName| randomEmail           |         | Register|
-#
-##      Redirect to Login must be fix, not equals -29 April
+
+@Register
+    Feature: Register
+    As a user
+    I want to register
+    So that I can create account in AltaShop
+
+    Scenario Outline: Register Scenario
+      Given I am on the homepage page
+      When I click button signin
+      And I click text register
+      And I Input "<nama>" name
+      And I input "<email>" email
+      And I input "<password>" password
+      And I click register button
+      Then I get result "<result>"
+      Examples:
+        | nama| email| password | result |
+        | Dhivas Dharma   | dhivas3@gmail.com     | dhivas3 | redirectLogin   |
+        | Dhivas Dharma   | dhivas3@gmail.com     | dhivas3 | duplicateEmail  |
+        |                 | dhivas3@gmail.com     | dhivas  | nullFullname    |
+        | randomName      |                       | dhivas3 | nullEmail       |
+        | randomName      | randomEmail           |         | nullPassword    |
+
+#  Register with valid email & valid password
+#  Register with same date
+#  Register with null Fullname, valid email & password
+#  Register with null Email, valid Fullname & password
+#  Register with null Password, valid Fullname & email

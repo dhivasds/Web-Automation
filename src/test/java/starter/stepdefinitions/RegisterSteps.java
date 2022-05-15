@@ -67,15 +67,23 @@ public class RegisterSteps {
     }
 
 
-    @Then("I redirect to {string}")
-    public void iRedirectTo(String page) {
-        if (page.equals("Login")){
+    @Then("I get result {string}")
+    public void iRedirectTo(String result) {
+        if (result.equals("redirectLogin")){
             loginPage.titleAppers();
             loginPage.titleTextEqual();
+        }else if (result.equals("duplicateEmail")){
+            registerPage.errorDuplicateEmailAppers();
+            registerPage.errorDuplicateEmailEquals();
+        }else if (result.equals("nullFullname")){
+            registerPage.errorNullFullnameAppers();
+            registerPage.errorNullFullnameEquals();
+        }else if (result.equals("nullEmail")){
+            registerPage.errorNullEmailAppers();
+            registerPage.errorNullEmailEquals();
         }else {
-            // GET SELECTOR BUAT BUTTON ERROR ALERT
-            registerPage.errorMessageAppears();
-            registerPage.errorFieldAlert();
+            registerPage.errorNullPasswordAppers();
+            registerPage.errorNullPasswordEquals();
         }
 
     }
