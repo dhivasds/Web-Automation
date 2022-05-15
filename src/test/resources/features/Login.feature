@@ -13,12 +13,9 @@ Feature: Login
     Then I get the "<result>"
     Examples:
       | email| password | result |
-      |dhivas1@gmail.com | dhivas1       |                             |
+      |dhivas1@gmail.com | dhivas1       |redirect product list        |
       |dhivas1@gmail.com |               |password is required         |
       |                  | dhivas1       |email is required            |
       |dhivas1@gmail.com | wrongPassword |email or password is invalid |
       |randomEmail       | wrongPassword |record not found             |
 
-
-
-#  Karna email menggunakan random, bisa dikosongkan karna jika di isi akan otomatis menggunakan faker

@@ -6,11 +6,11 @@ import org.openqa.selenium.By;
 
 public class DetailProductPage extends PageObject {
 //  Selector
-    private By buttonDetail(){ return By.cssSelector("div[id='519'] button:nth-child(1)");}
+    private By buttonDetail(){ return By.xpath("//button[contains(@class,'button-beli v-btn')]");}
     private By button3Star() { return By.cssSelector("button[aria-label='Rating 3 of 5']");}
     private By button1Star() { return By.cssSelector("button[aria-label='Rating 1 of 5']");}
     private By headerTextProduct() { return By.cssSelector(".text-h4.text--primary");}
-    private By rantingProduct() { return By.cssSelector(".black--text.text--lighten-2.text-caption.mr-2");}
+    private By rantingProduct() { return By.xpath("//span[text()=' (2) ']");}
 
 
     @Step
@@ -27,7 +27,7 @@ public class DetailProductPage extends PageObject {
 //   Equals Ranting Give Ranting 3 Star
     public void ranting3ProductAppers() { $(rantingProduct()).getText();}
     public void ranting3ProductEquals() { $(rantingProduct()).equals(3);}
-//   Equals Ranting Give Ranting 3 Star
+//   Equals Ranting Give Ranting 1 Star
     public void ranting1ProductAppers() { $(rantingProduct()).getText();}
     public void ranting1ProductEquals() { $(rantingProduct()).equals(1);}
 

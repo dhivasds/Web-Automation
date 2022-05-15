@@ -16,10 +16,10 @@
       Then I get result "<result>"
       Examples:
         | nama| email| password | result |
-        | Dhivas Dharma   | dhivas3@gmail.com     | dhivas3 | redirectLogin   |
-        | Dhivas Dharma   | dhivas3@gmail.com     | dhivas3 | duplicateEmail  |
-        |                 | dhivas3@gmail.com     | dhivas  | nullFullname    |
-        | randomName      |                       | dhivas3 | nullEmail       |
+        | Dhivas Dharma   | dhivas4@gmail.com     | dhivas4 | redirectLogin   |
+        | Dhivas Dharma   | dhivas4@gmail.com     | dhivas4 | duplicateEmail  |
+        |                 | dhivas4@gmail.com     | dhivas  | nullFullname    |
+        | randomName      |                       | dhivas4 | nullEmail       |
         | randomName      | randomEmail           |         | nullPassword    |
 
 #  Register with valid email & valid password

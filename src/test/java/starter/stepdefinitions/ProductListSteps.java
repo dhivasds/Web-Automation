@@ -33,11 +33,8 @@ public class ProductListSteps {
 
     @And("I click category {string}")
     public void iClickCategory(String cProduct) {
-        if (cProduct.equals("kesehatan")){
+        if (cProduct.equals("kesehatan")) {
             productListPage.clickItemsCategoryEmpty();
-        }else {
-            productListPage.scrollMenuCategory();
-            productListPage.clickItemsCategoryCovid();
         }
     }
 

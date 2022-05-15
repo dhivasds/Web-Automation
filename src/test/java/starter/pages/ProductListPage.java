@@ -8,16 +8,13 @@ import static net.serenitybdd.screenplay.actions.Scroll.to;
 
 public class ProductListPage extends PageObject {
 //    SELECTOR
-    private By buttonBeli(){ return By.cssSelector("div[id='519'] button:nth-child(2)");}
-    private By numberCart(){ return By.xpath("//span[@aria-label='Badge']"); }
+    private By buttonBeli(){ return By.xpath("//button[contains(@class,'button-beli ml-3')]");}
+    private By numberCart(){ return By.xpath("//span[text()='1']"); }
     private By dropdownCategory() { return By.cssSelector(".v-input__icon.v-input__icon--append");}
     private By itemsCategoryEmpty() { return By.xpath("(//div[@class='v-list-item__title'][normalize-space()='kesehatan'])[1]");}
     private By textProductEmpty() { return By.xpath("//div[@class='v-alert__content']");}
-    private By itemsCategoryCovid() { return By.xpath("//div[contains(text(),'Covid-19')]");}
     private By buttonClose() { return By.cssSelector("button[aria-label='clear icon']");}
 
-//  Menu Category Scroll (Test) //ga kepake
-    private By menuCategory(){ return By.xpath("//div[@class='v-menu__content theme--light menuable__content__active']");}
 
     @Step
     public void clickButtonBeli(){ $(buttonBeli()).click(); }
@@ -25,10 +22,6 @@ public class ProductListPage extends PageObject {
     public void clickDropdownCategory(){ $(dropdownCategory()).click();}
     @Step
     public void clickItemsCategoryEmpty(){ $(itemsCategoryEmpty()).click();}
-    @Step
-    public void scrollMenuCategory(){$(menuCategory()).click(); to(menuCategory());} //ga kepake
-    @Step
-    public void clickItemsCategoryCovid(){$(itemsCategoryCovid()).click();} //ga kepake
     @Step
     public void clickButtonClose(){$(buttonClose()).click();}
 
